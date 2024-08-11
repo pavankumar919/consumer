@@ -1,0 +1,12 @@
+server:
+  port: 9091
+spring:
+  kafka:
+    bootstrap-servers: localhost:29092
+    topic:
+      order-topic: order-topic
+    consumer:
+      group-id: order_group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: com.consumer.OrderDeserializer
